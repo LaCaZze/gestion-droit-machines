@@ -1,0 +1,36 @@
+<% include ../partials/head.ejs %>
+
+
+
+
+        <% include ../partials/header.ejs %>
+
+            <main class="container">
+                <div class="row mb-5">
+                    <section class="col-md-12 text-center">
+                        <h1 class="title_page">
+                            <i class="fas fa-user-lock mr-2  color_icon"></i>Connection</h1>
+                    </section>
+                </div>
+                <div class="row">
+                    <section class="col-md-8 mx-auto mt-5 mb-5">
+                    </section>
+                    <section class="col-md-8 mx-auto mt-5 mb-5">
+
+                        <form action="/users/auth" method="POST" class="p-5 bg-light border">
+                            <h2 class="text-center">s'identifier</h2>
+                            <p>
+                                <input type="text" name="username">Username</p>
+                            <p>
+                                <input type="password" name="password">Password</p>
+                            <p>
+                            <div class="form-group text-center mt-3">
+                                <input class="list-group-item list-group-item-action bg-info text-white text-uppercase btn" type="submit" value="submit"
+                                />
+                            </div>
+                        </form>
+                    </section>
+                </div>
+            </main>
+
+            <% include ../partials/footer.ejs %>

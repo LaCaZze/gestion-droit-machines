@@ -1,0 +1,9 @@
+<select>
+    <% for (var i=0; i < utilisateurs.length; i++){ %>
+
+        <option value="<%= utilisateurs[i]._id%>">
+            <%= utilisateurs[i].nom%>"
+        </option>
+        <% } %>
+</select>
+

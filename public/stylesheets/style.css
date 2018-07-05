@@ -26,6 +26,9 @@ body{
 .link_home {
   font-size: 25px;
 }
+
+/*========== pages droits ================*/
+
 /*==== Menu / logo ====*/
 
 .navbar-dark .navbar-nav .nav-link{
@@ -51,3 +54,10 @@ body{
   font-size: 14px;
 }
 
+/*=== RESPONSIVE ====*/
+
+@media screen and (max-width: 640px) {
+  .title_page {
+    font-size: 30px;
+  }
+}

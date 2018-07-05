@@ -15,6 +15,21 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 
+//
+var session = require('express-session');
+var MongoStore = require('connect-mongo')(session);
+
+
+// // Require Mongoose et connection à la bdd
+// //mongoose.connect("mongodb://localhost/planning")
+// mongoose.connect(urlRemote)
+//     .then (() => console.log('Connexion BDD OK'));
+
+var db = mongoose.connection;
+//
+
+
+
 
 var app = express();
 
@@ -30,6 +45,21 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+
+// // utilisation des sessions
+// app.use(session({
+//   // secret concat avec le password pour + de sécuriter
+//   secret: 'work hard',
+//   resave: true,
+//   saveUninitialized: false,
+//   store: new MongoStore({
+//       mongooseConnection: db
+//   })
+// }));
+
+//routes user
+var users = require("./routes/users");
+app.use("/users", users);
 
 //routes machines
 var machines = require("./routes/machines");

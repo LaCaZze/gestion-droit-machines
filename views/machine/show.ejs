@@ -5,22 +5,21 @@
     <main class="container">
         <div class="row mt-5 mb-5">
             <section class="col-md-12 text-center">
-                    <a class="list-group-item list-group-item-action bg-info text-white text-uppercase" href="/utilisateurs">Voir liste des utilisateurs</a>
+                    <a class="list-group-item list-group-item-action bg-info text-white text-uppercase" href="/machines">Voir liste des machines</a>
             </section>
         </div>
         <div class="row mt-5 mb-5">
             <div class="col-md-4">
-                    <%= machine.nom %> 
-                </div>
-                <div class="col-md-4">
-                    <%= machine.id %>
-                </div>
-                <div class="col-md-4">
-                    <a class="link_edit text-uppercase border p-2" href="/machines/edit/<%= machine._id %>">
-                        Editer
-                    </a>
-                </div>
-            </div> 
-        </div>
+                <%= machine.nom %> 
+            </div>
+            <div class="col-md-4">
+                <%= machine.id %>
+            </div>
+            <div class="col-md-4">
+                <a class="link_edit text-uppercase border p-2" href="/machines/edit/<%= machine._id %>">
+                    Editer
+                </a>
+            </div>
+        </div> 
     </main>
     <% include ../partials/footer.ejs %>

@@ -10,14 +10,14 @@
         </div>
         <div class="row mb-5">
             <section class="col-md-12 text-center">
-                <h1><i class="far fa-address-book mr-2 color_icon"></i>Edition d'un utilisateur</h1>
+                <h1 class="title_page"><i class="far fa-address-book mr-2 color_icon"></i>Edition d'un utilisateur</h1>
             </section>
         </div>
         <div class="row">    
             <section class="col-md-8 mx-auto mt-5 mb-5">
                 <form action="/utilisateurs/update/<%= utilisateur._id %>" method="POST" class="p-5 bg-light border">
                     <div class="form-group">
-                        <label>Nom: </label>navbar 
+                        <label>Nom: </label>
                         <input class="form-control" type="text" name="nom" value="<%= utilisateur.nom %>"  />
                     </div>
                     <div class="form-group">
@@ -25,7 +25,7 @@
                         <input class="form-control" type="text" name="prenom" value="<%= utilisateur.prenom %>"  />
                     </div>
                     <div class="form-group text-center">
-                        <input  class="list-group-item list-group-item-action bg-info text-white text-uppercase" type="submit" value="Mettre à jour" />
+                        <input  class="list-group-item list-group-item-action bg-info text-white text-uppercase btn" type="submit" value="Mettre à jour" />
                     </div>        
                 </form>
             </section>

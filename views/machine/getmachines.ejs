@@ -5,9 +5,25 @@ var machines = "";
 
         machines += "<option value='<%= machines[i]._id%>'><%= machines[i].nom%></option>";
     <% } %>
+
+
+    <!-- permet d'afficher dans la console la valeur  -->
+    document.getElementById("selectmachine").addEventListener("change", function (){
+        <!-- alert(this.value); -->
+        
+        var id_machine = "";
+        id_machine = (this.value);
+
+        console.log(id_machine);
+    
+    }, false);
+    
+
+
 $(function(){
 
-   $("#selectmachine").html(machines);  
-     
-}); 
+   $("#selectmachine").html(machines);
+        
+});
+
 

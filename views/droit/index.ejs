@@ -1,58 +1,62 @@
-<!DOCTYPE html>
-<html>
+<% include ../partials/head.ejs %>
 
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Liste des droits</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <% include ../partials/head %>
-        <!-- TODO le style-->
-        <link rel="stylesheet" type="text/css" media="screen" href="../../public/stylesheets/machines.css" />
-</head>
+    <body>
+        <% include ../partials/header.ejs %>
+            <main class="container">
+                <div class="row mt-5">
+                    <div class="col-md-12 mb-5 text-center">
+                        <h1 class="title_page">
+                            <i class="fas fa-user-lock mr-2  color_icon"></i>Liste des droits</h1>
+                    </div>
+                    <section class="col-md-12">
+                        <% if(droits.length > 0){%>
+                            <table class="table text-center col-md-12 bg-light">
+                                <thead>
+                                    <tr class="text-uppercase bg-info text-white mb-5">
+                                        <th class="p-3" scope="col">ID Machine</th>
+                                        <th class="p-3" scope="col">ID Utilisateur</th>
+                                        <th class="p-3" scope="col">Editer</th>
+                                        <th class="p3" scope="col">Droit</th>
 
-<body>
-    <div class="container">
-        <h1 class="text-center font-weight-bold mb-5 mt-5 titre">Liste des droits</h1>
-        <% if(droits.length > 0){%>
-            <table class="table table-dark text-center">
-                <thead>
-                    <tr>
-                        <th class="h3 font-weight-bold" scope="col">ID Machine</th>
-                        <th class="h3 font-weight-bold" scope="col">ID Utilisateur</th>
-                        <th class="h3 font-weight-bold" scope="col">Droit</th>
-                        <th scope="col" editer</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <% for (i=0; i<droits.length; i++) { %>
-                        <tr>
-                            <td>
-                                <%= droits[i].id_machine.nom %>
-                            </td>
-                            <td>
-                                <%= droits[i].id_utilisateur.nom %>
-                            </td>
-                            <td class="p-3">
-                                <a class="link_edit text-uppercase border p-2" href="/droits/edit/<%= droits[i]._id %>">Editer</a>
-                            </td>
+                                    </tr>
+                                </thead>
+                                <tbody class="border">
+                                    <% for (i=0; i<droits.length; i++) { %>
+                                        <tr>
+                                            <td class="p-3 border-0">
+                                                <a class="btn btn-outline-dark btn_show" href="">
+                                                    <%= droits[i].id_machine.nom %>
+                                                </a>
+                                            </td>
+                                            <td class="p-3 border-0">
+                                                <a class="btn btn-outline-dark btn_show" href="">
+                                                    <%= droits[i].id_utilisateur.nom %>
+                                                </a>
+                                            </td>
+                                            <td class="p-3 border-0">
+                                                <a class="btn btn-outline-dark btn_show" href="/droits/edit/<%= droits[i]._id %>">Editer</a>
+                                            </td>
+                                        </tr>
+                                        <% } %>
+                                </tbody>
+                            </table>
+                    </section>
+                    <section class="container pt-5 pb-5 pl-4 text-center">
+                        <div class="row">
+                            <a class="list-group-item list-group-item-action bg-info text-white text-uppercase" href="/droits/create">
+                                Créer des droits
+                            </a>
+                        </div>
 
-                        </tr>
-                        <% } %>
-                </tbody>
-            </table>
-            
-            <div>
-                <a class="btn btn-primary" href="/droits/create">Creer des droits</a>
-            </div>
-
-            <%} else{ %>
-                <div>Il n'y a pas de machine enregistré</div>
-                <div>
-                    <a href="/droits/create">Creer des droits</a>
+                        <%} else{ %>
+                            <div>Il n'y a pas de machine enregistré</div>
+                            <div class="row">
+                                <a class="list-group-item list-group-item-action bg-info text-white text-uppercase" href="/droits/create">
+                                    Créer des droits
+                                </a>
+                            </div>
+                            <% } %>
+                    </section>
                 </div>
-                <% } %>
-    </div>
-</body>
-
-</html>
+            </main>
+            <% include ../partials/footer.ejs %>

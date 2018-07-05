@@ -11,3 +11,18 @@ $("#selectutilisateur").html(utilisateurs);
  
 }); 
 
+
+     <!-- permet d'afficher dans la console la valeur  -->
+document.getElementById("selectutilisateur").addEventListener("change", function (){
+    <!-- alert(this.value); -->
+
+    var id_utlisateur = "";
+    id_utilisateur = (this.value);
+
+    console.log(id_utilisateur);
+
+}, false);
+
+
+
+

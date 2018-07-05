@@ -4,6 +4,7 @@
 <body>
     <% include ../partials/header.ejs %>
     <main class="container">
+
         <div class="row mt-5">
             <div class="col-md-12 mb-5 text-center">
                 <h1 class="title_page"> <i class="far fa-address-book mr-2 color_icon"></i>Liste des utilisateurs</h1>
@@ -46,13 +47,15 @@
 
                 <%} else{ %>
                     <div>Il n'y a pas d'utilisateur enregistré</div>
-                    <div>
+                    <div class="row">
                         <a class="list-group-item list-group-item-action bg-info text-white text-uppercase" href="/utilisateurs/create">Creer un utilisateur</a>
                     </div>
                     <% } %> 
             </section>            
         </div>        
     </main>
+
+    
 
     <% include ../partials/footer.ejs %>
 
